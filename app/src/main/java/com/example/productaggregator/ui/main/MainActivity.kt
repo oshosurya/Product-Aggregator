@@ -45,8 +45,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 is Resource.Success -> {
                     progressBar.visibility = View.GONE
-                    adapter.submitList(null)
-                    adapter.submitList(resource.data)
+                    adapter.updateProducts(resource.data!!.toList())
                 }
                 is Resource.Error -> {
                     progressBar.visibility = View.GONE

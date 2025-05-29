@@ -26,6 +26,7 @@ class MainViewModel(
             _products.value = Resource.Loading()
             try {
                 val allProducts = repository.getAllProducts()
+                productMap.clear()
                 allProducts.forEach { productMap[it.id] = it }
                 _products.value = Resource.Success(productMap.values.toList())
 
